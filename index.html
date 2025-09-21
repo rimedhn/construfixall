@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constru Fix All - Servicios de Construcción y Remodelación</title>
+    <link rel="icon" href="https://github.com/rimedhn/construfixall/blob/main/CONSTRU%20FIX%20ALL%20%20LOGO.png?raw=true">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @media (max-width: 640px) {
+            .whatsapp-float {
+                width: 56px;
+                height: 56px;
+                bottom: 16px;
+                right: 16px;
+                font-size: 26px;
+            }
+        }
+        .whatsapp-float:hover {
+            text-decoration: none;
+            color: #FFF;
+            background-color: #128c7e;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .navbar-scroll {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50" id="navbar">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="https://github.com/rimedhn/construfixall/blob/main/CONSTRU%20FIX%20ALL%20%20LOGO.png?raw=true" alt="Constru Fix All Logo" class="h-12 w-12 object-contain" onerror="this.src=''; this.alt='Logo no disponible'; this.style.display='none';">
+                    <div>
+                        <h1 class="text-2xl font-bold text-blue-900">Constru Fix All</h1>
+                        <p class="text-sm text-gray-600">Tu solución integral en construcción</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition">Inicio</a>
+                    <a href="#servicios" class="text-gray-700 hover:text-blue-600 transition">Servicios</a>
+                    <a href="#nosotros" class="text-gray-700 hover:text-blue-600 transition">Nosotros</a>
+                    <a href="#testimonios" class="text-gray-700 hover:text-blue-600 transition">Testimonios</a>
+                    <a href="#contacto" class="text-gray-700 hover:text-blue-600 transition">Contacto</a>
+                </nav>
+                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <nav id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#inicio" class="block text-gray-700 hover:text-blue-600 py-2">Inicio</a>
+                <a href="#servicios" class="block text-gray-700 hover:text-blue-600 py-2">Servicios</a>
+                <a href="#nosotros" class="block text-gray-700 hover:text-blue-600 py-2">Nosotros</a>
+                <a href="#testimonios" class="block text-gray-700 hover:text-blue-600 py-2">Testimonios</a>
+                <a href="#contacto" class="block text-gray-700 hover:text-blue-600 py-2">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-6">Servicios Expertos en Construcción</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Ofrecemos soluciones integrales en construcción y remodelación con la más alta calidad y profesionalismo</p>
+            <a href="#contacto" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition">
+                Solicitar Cotización
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Nuestros Servicios</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Albañilería -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <i class="fas fa-hammer text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Albañilería</h3>
+                        <p class="text-gray-600">Construcción de muros, pisos, estructuras y acabados en concreto y mampostería.</p>
+                    </div>
+                </div>
+
+                <!-- Plomería -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-wrench text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Plomería</h3>
+                        <p class="text-gray-600">Instalación y reparación de sistemas de agua, desagües y tuberías.</p>
+                    </div>
+                </div>
+
+                <!-- Soldadura -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <i class="fas fa-fire text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Soldadura</h3>
+                        <p class="text-gray-600">Trabajos especializados en soldadura de estructuras metálicas y reparaciones.</p>
+                    </div>
+                </div>
+
+                <!-- Electricidad -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-bolt text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Electricidad</h3>
+                        <p class="text-gray-600">Instalaciones eléctricas residenciales y comerciales, reparaciones y mantenimiento.</p>
+                    </div>
+                </div>
+
+                <!-- Tabla Yeso y PVC -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-th-large text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Tabla Yeso y PVC</h3>
+                        <p class="text-gray-600">Instalación de cielos falsos, divisiones y acabados en tabla yeso y PVC.</p>
+                    </div>
+                </div>
+
+                <!-- Pintura -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-paint-roller text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Pintura</h3>
+                        <p class="text-gray-600">Pintura interior y exterior, acabados decorativos y protección de superficies.</p>
+                    </div>
+                </div>
+
+                <!-- Aluminio y Vidrio -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
+                        <i class="fas fa-window-maximize text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Aluminio y Vidrio</h3>
+                        <p class="text-gray-600">Ventanas, puertas, mamparas y estructuras en aluminio y vidrio.</p>
+                    </div>
+                </div>
+
+                <!-- Trabajos en Madera -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
+                        <i class="fas fa-tree text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Trabajos en Madera</h3>
+                        <p class="text-gray-600">Carpintería, muebles a medida, puertas, ventanas y estructuras en madera.</p>
+                    </div>
+                </div>
+
+                <!-- Servicios Adicionales -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-tools text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Y Mucho Más</h3>
+                        <p class="text-gray-600">Remodelaciones completas, mantenimiento y servicios especializados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="nosotros" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 text-gray-800">Sobre Nosotros</h2>
+                <p class="text-lg text-gray-600 mb-12">
+                    En Constru Fix All somos especialistas en brindar soluciones integrales de construcción y remodelación. 
+                    Con años de experiencia en el sector, nos hemos consolidado como una empresa confiable que garantiza 
+                    calidad, puntualidad y profesionalismo en cada proyecto.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-12 mt-16">
+                    <div class="bg-blue-50 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-900">🎯 Nuestra Misión</h3>
+                        <p class="text-gray-700">
+                            Proporcionar servicios de construcción y remodelación de la más alta calidad, 
+                            superando las expectativas de nuestros clientes mediante soluciones innovadoras, 
+                            trabajo profesional y compromiso con la excelencia.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-orange-900">🚀 Nuestra Visión</h3>
+                        <p class="text-gray-700">
+                            Ser la empresa líder en servicios de construcción y remodelación, reconocida por 
+                            nuestra calidad, confiabilidad e innovación, contribuyendo al desarrollo de 
+                            espacios que mejoren la calidad de vida de nuestros clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Excelente trabajo en la remodelación de mi cocina. Muy profesionales y puntuales. Recomendado 100%."</p>
+                    <div class="font-semibold text-gray-800">- María González</div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Solucionaron mi problema de plomería rápidamente. Trabajo de calidad y precios justos."</p>
+                    <div class="font-semibold text-gray-800">- Carlos Rodríguez</div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Construyeron mi oficina desde cero. Quedé muy satisfecho con el resultado final y la atención."</p>
+                    <div class="font-semibold text-gray-800">- Ana Martínez</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Contáctanos</h2>
+            <div class="max-w-2xl mx-auto">
+                <form id="contactForm" class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nombre Completo *</label>
+                            <input type="text" id="nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Teléfono *</label>
+                            <input type="tel" id="telefono" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Dirección *</label>
+                        <input type="text" id="direccion" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Ubicación GPS (opcional)</label>
+                        <div class="flex flex-col sm:flex-row gap-3 mb-3">
+                            <input type="text" id="gps" placeholder="Presiona 'Obtener Ubicación' para capturar" readonly class="flex-1 px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none">
+                            <button type="button" id="getLocationBtn" class="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold transition flex items-center justify-center whitespace-nowrap">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span class="hidden sm:inline">Obtener Ubicación</span>
+                                <span class="sm:hidden">Ubicación</span>
+                            </button>
+                        </div>
+                        <div id="mapContainer" class="hidden">
+                            <div id="map" class="w-full h-64 rounded-lg border border-gray-300 mb-3"></div>
+                            <p class="text-sm text-gray-600">📍 Ubicación capturada. Se enviará el enlace de Google Maps con tu ubicación.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Tipo de Servicio *</label>
+                        <select id="servicio" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            <option value="">Seleccione un servicio</option>
+                            <option value="Albañilería">Albañilería</option>
+                            <option value="Plomería">Plomería</option>
+                            <option value="Soldadura">Soldadura</option>
+                            <option value="Electricidad">Electricidad</option>
+                            <option value="Tabla Yeso y PVC">Tabla Yeso y PVC</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Aluminio y Vidrio">Aluminio y Vidrio</option>
+                            <option value="Trabajos en Madera">Trabajos en Madera</option>
+                            <option value="Remodelación Completa">Remodelación Completa</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Detalle del Trabajo *</label>
+                        <textarea id="detalle" required rows="4" placeholder="Describa detalladamente el trabajo que necesita..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition">
+                        Enviar Solicitud por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://github.com/rimedhn/construfixall/blob/main/CONSTRU%20FIX%20ALL%20%20LOGO.png?raw=true" alt="Constru Fix All Logo" class="h-8 w-8 object-contain" onerror="this.src=''; this.alt='Logo no disponible'; this.style.display='none';">
+                        <h3 class="text-xl font-bold">Constru Fix All</h3>
+                    </div>
+                    <p class="text-gray-300">Tu solución integral en construcción y remodelación</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2">
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i> Indime.hn@gmail.com</p>
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i> +504 9359-3126</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-blue-400 transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-green-400 transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300 mb-2">&copy; 2024 Constru Fix All. Todos los derechos reservados.</p>
+                <p class="text-sm text-gray-400">
+                    Desarrollado por <a href="https://www.rimeddigital.com" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">Rimed Digital</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/50493593126" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fab fa-whatsapp" style="margin-top: 15px;"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scroll');
+            } else {
+                navbar.classList.remove('navbar-scroll');
+            }
+        });
+
+        // Location variables
+        let userLocation = null;
+        let map = null;
+        let marker = null;
+
+        // Get location button
+        document.getElementById('getLocationBtn').addEventListener('click', function() {
+            const btn = this;
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i><span class="hidden sm:inline">Obteniendo...</span><span class="sm:hidden">...</span>';
+            btn.disabled = true;
+            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        userLocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        
+                        // Update GPS input
+                        document.getElementById('gps').value = `${userLocation.lat}, ${userLocation.lng}`;
+                        
+                        // Show map
+                        showMap(userLocation);
+                        
+                        btn.innerHTML = '<i class="fas fa-check mr-2"></i><span class="hidden sm:inline">Ubicación Obtenida</span><span class="sm:hidden">Obtenida</span>';
+                        btn.disabled = false;
+                        btn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                        btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                    },
+                    function(error) {
+                        alert('No se pudo obtener la ubicación. Por favor, permite el acceso a la ubicación.');
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }
+                );
+            } else {
+                alert('Tu navegador no soporta geolocalización.');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        });
+
+        // Show map function
+        function showMap(location) {
+            const mapContainer = document.getElementById('mapContainer');
+            const mapDiv = document.getElementById('map');
+            
+            mapContainer.classList.remove('hidden');
+            
+            // Create simple map with OpenStreetMap
+            mapDiv.innerHTML = `
+                <div class="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 opacity-20"></div>
+                    <div class="text-center z-10">
+                        <div class="text-4xl mb-2">📍</div>
+                        <div class="font-semibold text-gray-700">Ubicación Capturada</div>
+                        <div class="text-sm text-gray-600">Lat: ${location.lat.toFixed(6)}</div>
+                        <div class="text-sm text-gray-600">Lng: ${location.lng.toFixed(6)}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const direccion = document.getElementById('direccion').value;
+            const gps = document.getElementById('gps').value;
+            const servicio = document.getElementById('servicio').value;
+            const detalle = document.getElementById('detalle').value;
+            
+            // Create WhatsApp message
+            let mensaje = `¡Hola! Me interesa solicitar sus servicios:\n\n`;
+            mensaje += `👤 *Nombre:* ${nombre}\n`;
+            mensaje += `📞 *Teléfono:* ${telefono}\n`;
+            mensaje += `📍 *Dirección:* ${direccion}\n`;
+            if (gps && userLocation) {
+                mensaje += `🗺️ *Ubicación GPS:* https://maps.google.com/?q=${userLocation.lat},${userLocation.lng}\n`;
+            }
+            mensaje += `🔧 *Servicio:* ${servicio}\n`;
+            mensaje += `📝 *Detalle:* ${detalle}\n\n`;
+            mensaje += `Espero su respuesta. ¡Gracias!`;
+            
+            // Encode message for URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            const whatsappURL = `https://wa.me/50493593126?text=${mensajeCodificado}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form and location
+            this.reset();
+            userLocation = null;
+            document.getElementById('mapContainer').classList.add('hidden');
+            const btn = document.getElementById('getLocationBtn');
+            btn.innerHTML = '<i class="fas fa-map-marker-alt mr-2"></i><span class="hidden sm:inline">Obtener Ubicación</span><span class="sm:hidden">Ubicación</span>';
+            btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            btn.classList.add('bg-green-600', 'hover:bg-green-700');
+            btn.disabled = false;
+            
+            // Show success message
+            alert('¡Formulario enviado! Se abrirá WhatsApp para completar el envío.');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98271caea355353a',t:'MTc1ODQzMjAxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
